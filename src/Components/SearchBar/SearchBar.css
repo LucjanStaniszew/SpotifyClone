@@ -1,0 +1,41 @@
+.SBContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.SB{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    height: 8vh;
+    width: 40vw;
+    border-radius: 24px;
+}
+
+.searchInput{
+    width: 25vw;
+    font-size: 3vh;
+    font-weight: 600;
+    margin-left: 2vw;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+}
+
+.artistSearch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    font-weight: 600;
+    height: 6vh;
+    width: 150px;
+    background-color: #D6F379;
+    border-color: transparent;
+    border-radius: 24px;
+    color: black;
+}

@@ -1,0 +1,81 @@
+.container {
+    display: flex;
+    width: 100vw;
+    height: 10vh;
+}
+
+.left {
+    flex: 1;
+    display: flex;
+    width: 50%;
+}
+
+.Aluxion-image {
+    width: 133px;
+    height: 24px;
+    margin-top: 15px;
+    margin-left: 42px;
+}
+
+.right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    margin-left: 10%;
+}
+
+.sesion{
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.sun-moon{
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.button-active {
+    background-color: transparent;
+    color: #D6F379;
+}
+
+.button-inactive {
+    background-color: transparent;
+    color: #FFFFFF;
+}
+
+a,
+button {
+    font-weight: 600px;
+    font-size: 16px;
+    padding: 2vh;
+    color: #E5E5E5;
+}
+
+.disable {
+    background-color: transparent;
+    border-color: transparent;
+    font-weight: 600px;
+    font-size: 16px;
+    color: #E5E5E5;
+    cursor: default;
+}
+
+a {
+    text-decoration: none;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.right2{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    margin-left: 82vw;
+}
