@@ -1,4 +1,10 @@
+.homeContainer{
+    height: 90vh;
+    width: 100vw;
+}
+
 .upper{
+    height: 30vh;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -6,29 +12,32 @@
 }
 
 .busca{
-    color: #FFFFFF;
-    margin-bottom: 0;
+    margin: 0;
     font-weight: 700;
-    font-size: 40px;
+    font-size: 30px;
+    color: #FFFFFF;
 }
 
 .albumes{
-    font-size: 40px;
+    margin: 0;
+    font-size: 30px;
     font-weight: 700;
     color:#D6F379;
-    margin-top: 0;
 }
 
 .p{
+    margin-top: 2vh;
     color: #FFFFFF;
     font-weight: 200;
     width: 30vw;
 }
 
 .down{
+    height: 50vh;
     display: flex;
     flex-direction: column;
-    margin-left: 8vw;
+    margin-left: 6vw;
+    margin-right: 6vh;
 }
 
 .save{
@@ -36,6 +45,7 @@
     align-items: flex-start;
     color: #FFFFFF;
     font-weight: 200;
+    margin-left: 6vw;
 }
 
 .please {
@@ -44,4 +54,11 @@
 
 .please2{
     color: #FFFFFF;
+}
+
+.bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:flex-end;
 }

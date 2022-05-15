@@ -47,9 +47,9 @@ const Home = () => {
           <SearchBar />
         </div>
         
+        <h5 className="save">Guarda tus álbumes favoritos de {band}</h5>
         <div className="down">
-          <h5 className="save">Guarda tus álbumes favoritos de {band}</h5>
-          <div>
+          <div className='setAlbums'>
             {
               albumes.map((a) => {
                 return (
@@ -65,6 +65,8 @@ const Home = () => {
                 )
               })
             }
+            </div>
+          <div className="bottom">
             <Paginado
             albumsPorPagina = {albumsPorPagina}
             todosAlbumes = {albums.length}
@@ -72,7 +74,7 @@ const Home = () => {
             paginaActual = {paginaActual}
             />
           </div>
-        </div>
+          </div>
       </div>
     )
   /*} else {

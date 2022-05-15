@@ -17,7 +17,7 @@ export default function Albums ({album, id, cover, title, date}) {
     return (
         <div className="albumsHome">
             <img src={cover} alt={title} className="cover"/>
-            <h2 className="title">{title}</h2>
+            <h3 className="title">{title}</h3>
             <h5 className="date">Publicado: {date}</h5>
             <button className="add" key={id} onClick={() => handleButton(album.id)} >+ Add album</button>
         </div>
