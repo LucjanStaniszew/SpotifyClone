@@ -38,22 +38,6 @@
     font-weight: 200;
 }
 
-.add{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 1vw;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    font-weight: 600;
-    height: 6vh;
-    width: 150px;
-    background-color: #D6F379;
-    border-color: transparent;
-    border-radius: 24px;
-    color: black;
-}
-
 .please {
     color: #D6F379;;
 }
