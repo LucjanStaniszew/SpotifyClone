@@ -12,9 +12,9 @@ export default function Paginado ({albumsPorPagina, todosAlbumes, paginate, pagi
     return(
         <div className="paginate">
             {
-                cantPaginas?.map((a, index) => {
+                cantPaginas?.map((a) => {
                     return (
-                        <button className={a=cantPaginas ? "activo" : "inactivo"} key={index} onClick={() => paginate(a)}>{a}</button>
+                        <button className="pages" onClick={() => paginate(a)}>{a}</button>
                     )
                 })
             }
