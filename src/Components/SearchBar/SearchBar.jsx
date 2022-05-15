@@ -9,20 +9,15 @@ const SearchBar = () => {
   const dispatch = useDispatch();
 
   const [artist, setArtist] = useState("")
-  const [artistId, setArtistId] = useState("")
-  //const [artistAlbums, setArtistAlbums] = useState([])
   const logged = getTokenFromUrl();
   const token = logged.access_token;
 
   const handleSearchBar = (e) => {
-    dispatch(getArtist(e.target.value, token))
-    //setArtistId(artist)
+    setArtist(e.target.value)
   }
 
   const handleSubmit = () => {
-    console.log(artistId, token)
-    dispatch(getArtistAlbum(artistId, token))
-    //dispatch(getArtistAlbum(artistId, token))
+    dispatch(getArtist(artist, token))
   }
 
   return (
