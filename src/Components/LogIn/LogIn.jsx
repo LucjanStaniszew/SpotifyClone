@@ -12,11 +12,25 @@ const clientId = "39b4aa1ee9534413a40b7fefe4dca807";
 const redirectURI = "http://localhost:3000/home";
 
 const scopes = [
-  "user-read-currently-playing",
-  "user-read-recently-played",
+  "ugc-image-upload",
+  "user-modify-playback-state",
   "user-read-playback-state",
+  "user-read-currently-playing",
+  "user-follow-modify",
+  "user-follow-read",
+  "user-read-recently-played",
+  "user-read-playback-position",
   "user-top-read",
-  "user-modify-playback-state"
+  "playlist-read-collaborative",
+  "playlist-modify-public",
+  "playlist-read-private",
+  "playlist-modify-private",
+  "app-remote-control",
+  "streaming",
+  "user-read-email",
+  "user-read-private",
+  "user-library-modify",
+  "user-library-read"
 ];
 
 const LogIn = `${autorizacion}?client_id=${clientId}&response_type=token&redirect_uri=${redirectURI}&scope=${scopes.join("%20")}&show_dialog=true`
