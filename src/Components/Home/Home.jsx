@@ -8,6 +8,7 @@ import LogIn from '../LogIn/LogIn.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { setToken, setUser } from '../../Redux/actions';
 import Paginado from '../Paginado/Paginado';
+import Albums from '../Albums/Albums';
 
 const Home = () => {
 
@@ -17,7 +18,7 @@ const Home = () => {
   const [albumsPorPagina, setAlbumsPorPagina] = useState(4);
   const indexUltimoAlbum = paginaActual * albumsPorPagina;
   const indexPrimerAlbum = indexUltimoAlbum - albumsPorPagina;
-  //const albumes = .slice(indexPrimerAlbum, indexUltimoAlbum)
+  const albumes = albums.slice(indexPrimerAlbum, indexUltimoAlbum)
 
   const Paginacion = (numeroPagina) => {
     setPaginaActual(numeroPagina)
@@ -48,6 +49,19 @@ const Home = () => {
         <div className="down">
           <h5 className="save">Guarda tus álbumes favoritos de {/* ArtistName */}</h5>
           <div>
+            {
+              albumes.map((a) => {
+                return (
+                  <div key={a.id}>
+                    <Albums
+                    cover = {a.images[1].url}
+                    title = {a.name}
+                    date = {a.release_date}
+                    />
+                  </div>
+                )
+              })
+            }
             <Paginado
             albumsPorPagina = {albumsPorPagina}
             todosAlbumes = {albums.length}
