@@ -1,18 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Home.css';
 import NavBar from '../NavBar/NavBar.jsx';
 import SearchBar from '../SearchBar/SearchBar.jsx';
 import { getTokenFromUrl } from '../LogIn/LogIn';
 import Arrow2 from '../../Media/Arrow2.png';
 import LogIn from '../LogIn/LogIn.jsx';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setToken, setUser } from '../../Redux/actions';
+import Paginado from '../Paginado/Paginado';
 
 const Home = () => {
 
+  const albums = useSelector((state) => state.artistAlbums)
+
+  const [paginaActual, setPaginaActual] = useState(1);
+  const [albumsPorPagina, setAlbumsPorPagina] = useState(4);
+  const indexUltimoAlbum = paginaActual * albumsPorPagina;
+  const indexPrimerAlbum = indexUltimoAlbum - albumsPorPagina;
+  //const albumes = .slice(indexPrimerAlbum, indexUltimoAlbum)
+
+  const Paginacion = (numeroPagina) => {
+    setPaginaActual(numeroPagina)
+  }
+
   //const token = getTokenFromUrl()
 
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
 /*
   useEffect(()=> {
     dispatch(setUser(token))
@@ -21,6 +34,7 @@ const Home = () => {
 
   //if(token) {
       return (
+
         <div className='homeContainer'>
         <NavBar />
 
@@ -33,6 +47,14 @@ const Home = () => {
         
         <div className="down">
           <h5 className="save">Guarda tus álbumes favoritos de {/* ArtistName */}</h5>
+          <div>
+            <Paginado
+            albumsPorPagina = {albumsPorPagina}
+            todosAlbumes = {albums.length}
+            paginate = {Paginacion}
+            paginaActual = {paginaActual}
+            />
+          </div>
           {/*
           <img src="" alt="" className="albumCover" />
           <h2 className="albumTitle"></h2>
