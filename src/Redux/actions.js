@@ -45,30 +45,9 @@ export function getArtist(artist, token) {
                     "authorization": `Bearer ${token}`
                 }
             })
-            console.log(artistAlbums)
             return dispatch({
                 type: "GET_ARTIST",
                 payload: artistAlbums.items
             })
-    }
-}
-
-export function getArtistAlbum(artistId, token) {
-    console.log(artistId)
-    return async function (dispatch) {
-        try {
-            const artistAlbums = await spotify.getArtistAlbums(artistId,{
-                headers: {
-                    "authorization": `Bearer ${token}`
-                }
-            })
-            console.log(artistAlbums)
-            return dispatch({
-                type: "GET_ARTIST_ALBUMS",
-                payload: artistAlbums
-            })
-        } catch (error) {
-            console.log(error)
-        }
     }
 }
