@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import './SearchBar.css';
-import { getArtist, getArtistAlbum } from '../../Redux/actions';
+import { getArtist } from '../../Redux/actions';
 import { getTokenFromUrl } from '../LogIn/LogIn';
 
 const SearchBar = () => {

@@ -2,9 +2,8 @@ const initialState = {
     user: null,
     userAlbums: [],
     savedAlbums: [],
-    token: null,
+    token: "",
     artist: null,
-    artistId: null,
     artistAlbums: []
 }
 
@@ -15,6 +14,11 @@ function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 token: action.payload
+            }
+
+        case "SET_ACCESS_TOKEN":
+            return {
+                ...state
             }
         
         case "GET_ARTIST": {
@@ -48,7 +52,7 @@ function rootReducer(state = initialState, action) {
         case "GET_MY_ALBUMS": {
             return {
                 ...state,
-                userAlbums: action.payload
+                userAlbums: [ action.payload]
             }
         }
 

@@ -7,9 +7,14 @@ export const getTokenFromUrl = () => {
   }, {})
 }
 
+export const finalAccessToken = () => {
+  sessionStorage.setItem("token", getTokenFromUrl())
+  console.log(sessionStorage.getItem("token"))
+}
+
 const autorizacion = "https://accounts.spotify.com/authorize";
 const clientId = "39b4aa1ee9534413a40b7fefe4dca807";
-const redirectURI = "http://localhost:3000/home";
+const redirectURI = "http://localhost:3000";
 
 const scopes = [
   "ugc-image-upload",

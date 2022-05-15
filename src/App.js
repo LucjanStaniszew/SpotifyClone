@@ -5,15 +5,13 @@ import LogIn from './Components/LogIn/LogIn.jsx'
 import Home from './Components/Home/Home.jsx';
 import MyAlbums from './Components/MyAlbums/MyAlbums.jsx';
 import { getTokenFromUrl } from './Components/LogIn/LogIn.jsx';
-import { useDispatch, useSelector } from 'react-redux';
-import { SET_USER } from './Redux/userSlice.js';
-import { selectToken, SET_TOKEN } from './Redux/tokenSlice.js';
+import { useDispatch } from 'react-redux';
 import SpotifyWebApi from 'spotify-web-api-js';
 import './App.css';
-import { setToken, setUser } from './Redux/actions.js';
+import { getMyAlbums, setToken, setUser } from './Redux/actions.js';
 
 function App() {
-  
+  /*
   const dispatch = useDispatch();
 
   const spotify = new SpotifyWebApi();
@@ -25,8 +23,8 @@ function App() {
       dispatch(setToken(token))
       spotify.setAccessToken(token);
       dispatch(setUser());
-      //spotify.getMySavedAlbums(token);
-  }, [dispatch])
+      dispatch(getMyAlbums(token));
+  }, [])*/
 
   return (
     <div className="App">

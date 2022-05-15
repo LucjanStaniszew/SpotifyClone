@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
+import Arrow2 from '../../Media/Arrow2.png'
 import NavBar from '../NavBar/NavBar.jsx';
 import SearchBar from '../SearchBar/SearchBar.jsx';
-import { getTokenFromUrl } from '../LogIn/LogIn';
-import Arrow2 from '../../Media/Arrow2.png';
-import LogIn from '../LogIn/LogIn.jsx';
 import { useDispatch, useSelector } from 'react-redux';
-import { setToken, setUser } from '../../Redux/actions';
+import { accesToken, getMyAlbums, setUser } from '../../Redux/actions';
 import Paginado from '../Paginado/Paginado';
 import Albums from '../Albums/Albums';
 
 const Home = () => {
+
+  const dispatch = useDispatch()
+  const access = sessionStorage.getItem("token")
+
+  useEffect(()=> {
+    const access = sessionStorage.getItem("token")
+
+      dispatch(accesToken(access))
+      dispatch(setUser());
+      dispatch(getMyAlbums(access));
+  }, [dispatch])
 
   const albums = useSelector((state) => state.artistAlbums)
   const band = useSelector((state) => state.artist)
@@ -19,22 +28,14 @@ const Home = () => {
   const [albumsPorPagina, setAlbumsPorPagina] = useState(4);
   const indexUltimoAlbum = paginaActual * albumsPorPagina;
   const indexPrimerAlbum = indexUltimoAlbum - albumsPorPagina;
-  const albumes = albums.slice(indexPrimerAlbum, indexUltimoAlbum)
+  const albumes = albums.items.slice(indexPrimerAlbum, indexUltimoAlbum)
+  console.log(albumes)
 
   const Paginacion = (numeroPagina) => {
     setPaginaActual(numeroPagina)
   }
 
-  //const token = getTokenFromUrl()
-
-  //const dispatch = useDispatch();
-/*
-  useEffect(()=> {
-    dispatch(setUser(token))
-  })
-*/
-
-  //if(token) {
+  if(access) {
       return (
 
         <div className='homeContainer'>
@@ -77,16 +78,16 @@ const Home = () => {
           </div>
       </div>
     )
-  /*} else {
+  } else {
     return(
       <div>
         <NavBar/>
         <h3 className='please2'>Error 401, Unauthorized</h3>
         <h1 className='please'>You must Log In to see this page</h1>
-        <a className='logIn' href={LogIn}>Log In con Spotify <img src={Arrow2} alt="Arrow" className='Arrow2' /></a>
+        <a className='logIn' href="/">Log In con Spotify <img src={Arrow2} alt="Arrow" className='Arrow2' /></a>
     </div>
     )
-  }*/
+  }
 }
 
 export default Home

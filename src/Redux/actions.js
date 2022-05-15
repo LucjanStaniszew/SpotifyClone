@@ -18,6 +18,20 @@ export function setToken() {
     }
 }
 
+export function accesToken(token){
+    return async function (dispatch){
+        try{
+            const tokenAcces = await spotify.setAccessToken(token)
+            return dispatch({
+                type: "SET_ACCESS_TOKEN",
+                payload: tokenAcces
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
+
 export function setUser(user) {
     return async function (dispatch) {
         try {
@@ -81,7 +95,7 @@ export function getMyAlbums(token) {
         })
         return dispatch({
             type: "GET_MY_ALBUMS",
-            payload: misAlbumes
+            payload: misAlbumes.items
         })
     }
 }
