@@ -10,25 +10,24 @@ import { SET_USER } from './Redux/userSlice.js';
 import { selectToken, SET_TOKEN } from './Redux/tokenSlice.js';
 import SpotifyWebApi from 'spotify-web-api-js';
 import './App.css';
+import { setToken, setUser } from './Redux/actions.js';
 
 function App() {
   
   const dispatch = useDispatch();
-  const token = useSelector(selectToken)
+  //const token = useSelector(selectToken)
 
   const spotify = new SpotifyWebApi();
 
   useEffect(()=> {
     const logged = getTokenFromUrl();
-    window.location.hash = "";
     const token = logged.access_token;
 
-    if (token) {
-      dispatch(SET_TOKEN(token))
+      dispatch(setToken(token))
       spotify.setAccessToken(token);
-      spotify.getMe().then( user => dispatch(SET_USER(user)) )
-      console.log(token)
-    }
+      dispatch(setUser())
+      //spotify.getMe().then( user => dispatch(SET_USER(user)) )
+      //spotify.getPlaylist().then(playlist => console.log(playlist))
   }, [dispatch])
 
   return (

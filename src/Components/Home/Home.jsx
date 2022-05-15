@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Home.css';
 import NavBar from '../NavBar/NavBar.jsx';
 import SearchBar from '../SearchBar/SearchBar.jsx';
 import { getTokenFromUrl } from '../LogIn/LogIn';
 import Arrow2 from '../../Media/Arrow2.png';
 import LogIn from '../LogIn/LogIn.jsx';
+import { useDispatch } from 'react-redux';
+import { setToken, setUser } from '../../Redux/actions';
 
 const Home = () => {
 
-  const token = getTokenFromUrl()
+  //const token = getTokenFromUrl()
 
-  if(token) {
+  const dispatch = useDispatch();
+/*
+  useEffect(()=> {
+    dispatch(setUser(token))
+  })
+*/
+
+  //if(token) {
       return (
         <div className='homeContainer'>
         <NavBar />
@@ -33,7 +42,7 @@ const Home = () => {
         </div>
       </div>
     )
-  } else {
+  /*} else {
     return(
       <div>
         <NavBar/>
@@ -42,7 +51,7 @@ const Home = () => {
         <a className='logIn' href={LogIn}>Log In con Spotify <img src={Arrow2} alt="Arrow" className='Arrow2' /></a>
     </div>
     )
-  }
+  }*/
 }
 
 export default Home
