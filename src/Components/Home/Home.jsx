@@ -13,6 +13,7 @@ import Albums from '../Albums/Albums';
 const Home = () => {
 
   const albums = useSelector((state) => state.artistAlbums)
+  const band = useSelector((state) => state.artist)
 
   const [paginaActual, setPaginaActual] = useState(1);
   const [albumsPorPagina, setAlbumsPorPagina] = useState(4);
@@ -47,13 +48,15 @@ const Home = () => {
         </div>
         
         <div className="down">
-          <h5 className="save">Guarda tus álbumes favoritos de {/* ArtistName */}</h5>
+          <h5 className="save">Guarda tus álbumes favoritos de {band}</h5>
           <div>
             {
               albumes.map((a) => {
                 return (
                   <div key={a.id}>
                     <Albums
+                    album = {a}
+                    id = {a.id}
                     cover = {a.images[1].url}
                     title = {a.name}
                     date = {a.release_date}
@@ -69,12 +72,6 @@ const Home = () => {
             paginaActual = {paginaActual}
             />
           </div>
-          {/*
-          <img src="" alt="" className="albumCover" />
-          <h2 className="albumTitle"></h2>
-          <h5 className="published">Publicado:</h5>
-          */}
-          <button className="add">+ Add album</button>
         </div>
       </div>
     )
