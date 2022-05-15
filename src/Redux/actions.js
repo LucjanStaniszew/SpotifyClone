@@ -47,7 +47,41 @@ export function getArtist(artist, token) {
             })
             return dispatch({
                 type: "GET_ARTIST",
-                payload: artistAlbums.items
-            })
+                payload: artistAlbums.items,
+            }).then(
+                dispatch({
+                        type: "SET_ARTIST",
+                        payload: artist
+                })
+            )
+    }
+}
+
+export function saveAlbum(id, token) {
+    const saving = [id]
+    return async function (dispatch) {
+        const album = await spotify.getAlbum(saving, {
+            headers: {
+                "authorization": `Bearer ${token}`
+            }
+        })
+        return dispatch({
+            type: "SAVE_ALBUM",
+            payload: album
+        })
+    }
+}
+
+export function getMyAlbums(token) {
+    return async function (dispatch) {
+        const misAlbumes = await spotify.getMySavedAlbums({
+            headers: {
+                "authorization": `Bearer ${token}`
+            }
+        })
+        return dispatch({
+            type: "GET_MY_ALBUMS",
+            payload: misAlbumes
+        })
     }
 }
