@@ -15,7 +15,6 @@ import { setToken, setUser } from './Redux/actions.js';
 function App() {
   
   const dispatch = useDispatch();
-  //const token = useSelector(selectToken)
 
   const spotify = new SpotifyWebApi();
 
@@ -25,9 +24,8 @@ function App() {
 
       dispatch(setToken(token))
       spotify.setAccessToken(token);
-      dispatch(setUser())
-      //spotify.getMe().then( user => dispatch(SET_USER(user)) )
-      //spotify.getPlaylist().then(playlist => console.log(playlist))
+      dispatch(setUser());
+      //spotify.getMySavedAlbums(token);
   }, [dispatch])
 
   return (
