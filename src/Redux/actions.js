@@ -39,15 +39,16 @@ export function getArtist(artist, token) {
                     "authorization": `Bearer ${token}`
                 }
             })
-            //console.log(artists)
-            //console.log(artists.artists)
-            //console.log(artists.artists.items[0].id)
-            //console.log(artists.artists.items.filter(a => a.name === artist))
-            //const artistId = artists.artists.items[0].id
-            //console.log(artistId);
+            const artistId = artists.artists.items[0].id
+            const artistAlbums = await spotify.getArtistAlbums(artistId, {
+                headers: {
+                    "authorization": `Bearer ${token}`
+                }
+            })
+            console.log(artistAlbums)
             return dispatch({
                 type: "GET_ARTIST",
-                payload: artists.artists.items.filter(a => a.name === artist)[0].id
+                payload: artistAlbums.items
             })
     }
 }

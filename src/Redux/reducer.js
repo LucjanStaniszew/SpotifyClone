@@ -14,10 +14,17 @@ function rootReducer(state = initialState, action) {
                 token: action.payload
             }
         
-        case "GET_ARTIST": {
+        /*case "GET_ARTIST": {
             return {
                 ...state,
                 artistId: action.payload
+            }
+        }*/
+        
+        case "GET_ARTIST": {
+            return {
+                ...state,
+                artistAlbums: action.payload
             }
         }
 
