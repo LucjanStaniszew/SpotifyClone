@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import './NavBar.css';
 import Aluxion from '../../Media/Aluxion.png';
+import Aluxion2 from '../../Media/Aluxion2.png';
 import Sun from '../../Media/Sun.png';
 import { getTokenFromUrl } from '../LogIn/LogIn';
 import { useNavigate } from 'react-router';
+import Close from '../../Media/close.png'
+
 
 const NavBar = () => {
 
@@ -26,6 +29,7 @@ const NavBar = () => {
         
       <div className="left">
         <img src={Aluxion} alt="Aluxion" className="Aluxion-image" />
+        <img src={Aluxion2} alt="Aluxion" className='Aluxion-image2' />
       </div>
 
       <div className="right">
@@ -33,6 +37,7 @@ const NavBar = () => {
         <a href="/myalbums" className={`button-${albumsActive ? "active" : "inactive"}`}>My Albums</a>
         <h5 className="disable">|</h5>
         <button className="sesion" onClick={handleCloseSession}>Cerrar Sesion</button>
+        <img src={Close} alt="close" className='close' />
         <h5 className="disable">|</h5>
         <button className="sun-moon"><img src={Sun} alt="Sun/Moon" /></button>
       </div>

@@ -17,6 +17,18 @@
     margin-left: 42px;
 }
 
+.Aluxion-image2 {
+    display: none;
+    /*width: 133px;
+    height: 24px;
+    margin-top: 15px;
+    margin-left: 42px;*/
+}
+
+.close{
+    display: none;
+}
+
 .right {
     flex: 1;
     display: flex;
@@ -78,4 +90,46 @@ button:hover{
     justify-content: space-around;
     width: 50%;
     margin-left: 82vw;
+}
+
+/* TABLET */
+
+@media screen and (max-width: 820px) {
+    .container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+/* CELL PHONE */
+
+@media screen and (max-width: 390px) {
+    .left{
+        margin-left: 5vw;
+        width: 20vw;
+    }
+    .Aluxion-image{
+        display: none;
+    }
+    .Aluxion-image2{
+        display: flex;
+        width: 7vw;
+        height: 4vh;
+    }
+
+    .right{
+        width: 80vw;
+    }
+    .sesion{
+        display: none;
+    }
+    .close{
+        display: flex;
+        width: 8vw;
+        height: 3vh;
+        color: white;
+        margin: 2vw;
+    }
+    
 }

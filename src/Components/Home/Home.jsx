@@ -14,21 +14,19 @@ const Home = () => {
   const access = sessionStorage.getItem("token")
 
   useEffect(()=> {
-    const access = sessionStorage.getItem("token")
-
       dispatch(accesToken(access))
       dispatch(setUser());
       dispatch(getMyAlbums(access));
   }, [dispatch])
 
-  const albums = useSelector((state) => state.artistAlbums)
   const band = useSelector((state) => state.artist)
+  const albums = useSelector((state) => state.artistAlbums)
 
   const [paginaActual, setPaginaActual] = useState(1);
   const [albumsPorPagina, setAlbumsPorPagina] = useState(4);
   const indexUltimoAlbum = paginaActual * albumsPorPagina;
   const indexPrimerAlbum = indexUltimoAlbum - albumsPorPagina;
-  const albumes = albums.items.slice(indexPrimerAlbum, indexUltimoAlbum)
+  const albumes = albums.slice(indexPrimerAlbum, indexUltimoAlbum)
   console.log(albumes)
 
   const Paginacion = (numeroPagina) => {

@@ -91,3 +91,60 @@
     top: 5px;
     left: 4px;
 }
+
+/* TABLET */
+
+@media screen and (max-width: 820px) {
+    .login-container{
+        display: flex;
+        flex-direction: column;
+        margin-left: 2vw;
+    }
+
+    .cuenta{
+        width: 30vw;
+    }
+}
+
+/* PHONE */
+
+@media screen and (max-width: 390px) {
+    .login-container{
+        width: 100vw;
+        justify-content: center;
+    }
+    .left-login{
+        margin-top: 0;
+        width: 100vw;
+    }
+    .right-login{
+        width: 100vw;
+    }
+    .Arrow{
+        align-items: center;
+        margin-right: 10vw;
+    }
+    .disfruta{
+        width: 100vw;
+    }
+    .musica{
+        width: 100vw;
+    }
+    .cuenta{
+        width: 80vw;
+    }
+    .spoti{
+        width: 100vw;
+    }
+    .logIn{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 80vw;
+    }
+    .Arrow2{
+        margin: 2vw;
+    }
+
+    
+}
