@@ -46,7 +46,7 @@
     color: #FFFFFF;
     font-weight: 200;
     margin-left: 6vw;
-}
+ }
 
 .please {
     color: #D6F379;;
@@ -63,5 +63,18 @@
     align-items:flex-end;
 }
 
-/* TABLET */
+/* Ipad pro 11'' - 1  */
 
+@media screen and (max-width: 834) {
+    .save{
+        display: flex;
+        width: 100vw;
+        justify-content: center;
+    }
+}
+
+/* PHONES */
+
+@media screen and (max-width:390) {
+    
+}

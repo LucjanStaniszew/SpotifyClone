@@ -102,20 +102,16 @@ button:hover{
     }
 }
 
-/* CELL PHONE */
+/* IPHONE 13/13 pro */
 
 @media screen and (max-width: 390px) {
     .left{
-        margin-left: 5vw;
-        width: 20vw;
+        margin-top: 0px;
     }
-    .Aluxion-image{
-        display: none;
-    }
+    
     .Aluxion-image2{
-        display: flex;
-        width: 7vw;
-        height: 4vh;
+        width: 133px;
+        height: 24px;
     }
 
     .right{
