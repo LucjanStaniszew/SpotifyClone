@@ -74,7 +74,7 @@ export function getArtist(artist, token) {
 export function saveAlbum(id, token) {
     const saving = [id]
     return async function (dispatch) {
-        const album = await spotify.getAlbum(saving, {
+        const album = await spotify.addToMySavedAlbums(saving, {
             headers: {
                 "authorization": `Bearer ${token}`
             }
@@ -82,6 +82,21 @@ export function saveAlbum(id, token) {
         return dispatch({
             type: "SAVE_ALBUM",
             payload: album
+        })
+    }
+}
+
+export function removeAlbum(id, token) {
+    const remove = [id]
+    return async function (dispatch) {
+        const removeAlbum = await spotify.removeFromMySavedAlbums(remove, {
+            headers: {
+                "authorization": `Bearer ${token}`
+            }
+        }) 
+        return dispatch({
+            type: "REMOVE_ALBUM",
+            payload: removeAlbum
         })
     }
 }

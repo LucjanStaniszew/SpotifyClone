@@ -27,7 +27,6 @@ const Home = () => {
   const indexUltimoAlbum = paginaActual * albumsPorPagina;
   const indexPrimerAlbum = indexUltimoAlbum - albumsPorPagina;
   const albumes = albums.slice(indexPrimerAlbum, indexUltimoAlbum)
-  console.log(albumes)
 
   const Paginacion = (numeroPagina) => {
     setPaginaActual(numeroPagina)

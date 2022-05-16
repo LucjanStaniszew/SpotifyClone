@@ -1,0 +1,52 @@
+.albumsContainer{
+    height: 90vh;
+    width: 100vw;
+}
+.albumsUpper{
+    height: 30vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.albumes{
+    margin: 0;
+    font-weight: 700;
+    font-size: 30px;
+    color: #FFFFFF;
+}
+.guardados{
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+    color:#D6F379;
+}
+.p{
+    margin-top: 2vh;
+    color: #FFFFFF;
+    font-weight: 200;
+    width: 30vw;
+}
+.bottom{
+    margin-top: 10vh;
+    margin-right: 5vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 6vw;
+    margin-right: 15vh;
+    align-items: center;
+}
+.myAlbums{
+    margin-left: 5vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.pages{
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

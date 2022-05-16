@@ -1,0 +1,52 @@
+.albumsHome{
+    height: 40vh;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items:center;
+    color: #FFFFFF
+}
+
+.setAlbums{
+    height: 40vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cover{
+    display: flex;
+    height: 20vh;
+    width: 16vw;
+    justify-content: center;
+}
+
+.title{
+    margin: 0
+}
+
+.date{
+    margin: 0
+}
+
+.remove{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    font-weight: 600;
+    font-size: small;
+    height: 6vh;
+    width: 150px;
+    background-color: #E3513D;
+    border-color: transparent;
+    border-radius: 24px;
+    color: #FFFFFF;
+}
+
+.bottom{
+    margin: 0;
+}

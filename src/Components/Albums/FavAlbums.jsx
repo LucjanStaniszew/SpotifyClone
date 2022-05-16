@@ -1,8 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { saveAlbum } from '../../Redux/actions';
-import { getTokenFromUrl } from '../LogIn/LogIn';
-import './Albums.css';
+import { removeAlbum } from '../../Redux/actions';
+import './FavAlbums.css';
 
 export default function Albums ({album, id, cover, title, date}) {
 
@@ -10,8 +9,8 @@ export default function Albums ({album, id, cover, title, date}) {
 
     const dispatch = useDispatch()
 
-    const handleButton = (e) => {
-        dispatch(saveAlbum(e, token ))
+    const handleDelete = (e) => {
+        dispatch(removeAlbum(e, token ))
     }
 
     return (
@@ -19,7 +18,7 @@ export default function Albums ({album, id, cover, title, date}) {
             <img src={cover} alt={title} className="cover"/>
             <h3 className="title">{title}</h3>
             <h5 className="date">Publicado: {date}</h5>
-            <button className="add" key={id} onClick={() => handleButton(album.id)} >+ Add album</button>
+            <button className="remove" key={id} onClick={() => handleDelete(album.album.id)} >- Remove album</button>
         </div>
     )
 

@@ -49,10 +49,16 @@ function rootReducer(state = initialState, action) {
             }
         }
 
+        case "REMOVE_ALBUM": {
+            return {
+                ...state,
+            }
+        }
+
         case "GET_MY_ALBUMS": {
             return {
                 ...state,
-                userAlbums: [ action.payload]
+                userAlbums: action.payload
             }
         }
 
