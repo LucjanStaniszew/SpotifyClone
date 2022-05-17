@@ -5,22 +5,24 @@ import './FavAlbums.css';
 
 export default function Albums ({album, id, cover, title, date}) {
 
+    const [userAlbums, setUserAlbums] = []
+
     const token = sessionStorage.getItem("token");
 
     const dispatch = useDispatch()
 
     const handleDelete = (e) => {
         dispatch(removeAlbum(e, token ))
-        dispatch(getMyAlbums(token))
-        window.location.reload(false)
-    }
+        }
+
+    const reload =  dispatch(getMyAlbums(token))
 
     return (
         <div className="albumsHome">
             <img src={cover} alt={title} className="cover"/>
             <h3 className="title">{title}</h3>
             <h5 className="date">Publicado: {date}</h5>
-            <button className="remove" key={id} onClick={() => handleDelete(album.album.id)} >- Remove album</button>
+            <button className="remove" key={id} onClick={() => [handleDelete(album.album.id), reload()]} >- Remove album</button>
         </div>
     )
 
