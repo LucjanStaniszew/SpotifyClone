@@ -5,8 +5,6 @@ import './FavAlbums.css';
 
 export default function Albums ({album, id, cover, title, date}) {
 
-    const [userAlbums, setUserAlbums] = []
-
     const token = sessionStorage.getItem("token");
 
     const dispatch = useDispatch()
