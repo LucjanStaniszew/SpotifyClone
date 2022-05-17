@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { removeAlbum } from '../../Redux/actions';
+import { getMyAlbums, removeAlbum } from '../../Redux/actions';
 import './FavAlbums.css';
 
 export default function Albums ({album, id, cover, title, date}) {
@@ -11,6 +11,8 @@ export default function Albums ({album, id, cover, title, date}) {
 
     const handleDelete = (e) => {
         dispatch(removeAlbum(e, token ))
+        dispatch(getMyAlbums(token))
+        window.location.reload(false)
     }
 
     return (
