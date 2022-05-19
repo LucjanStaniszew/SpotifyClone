@@ -3,11 +3,11 @@ import { getTokenFromUrl } from "../Components/LogIn/LogIn";
 
 const spotify = new SpotifyWebApi();
 
-export function setToken() {
+export function setToken(token) {
     return async function (dispatch) {
         try {
-            const logged = await getTokenFromUrl()
-            const token = logged.access_token
+            //const logged = await getTokenFromUrl()
+            //const token = logged.access_token
             return dispatch({
                 type: "SET_TOKEN",
                 payload: token
@@ -32,7 +32,7 @@ export function accesToken(token){
     }
 }
 
-export function setUser(user) {
+export function setUser() {
     return async function (dispatch) {
         try {
             const user = await spotify.getMe()

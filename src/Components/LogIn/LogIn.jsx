@@ -14,6 +14,7 @@ export const finalAccessToken = () => {
 
 const autorizacion = "https://accounts.spotify.com/authorize";
 const clientId = "39b4aa1ee9534413a40b7fefe4dca807";
+const clientId2 = "";
 const redirectURI = "http://localhost:3000";
 
 const scopes = [

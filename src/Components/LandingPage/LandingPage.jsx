@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react';
 import NavBar from '../NavBar/NavBar';
 import Arrow from '../../Media/Arrow.png';
 import Arrow2 from '../../Media/Arrow2.png';
-import LogIn, { finalAccessToken, getTokenFromUrl } from '../LogIn/LogIn.jsx';
+import LogIn, { getTokenFromUrl } from '../LogIn/LogIn.jsx';
 import './LandingPage.css';
-import { Redirect } from 'react-router-dom';
 import { useNavigate } from 'react-router';
 
 const LandingPage = () => {
@@ -17,12 +16,11 @@ const LandingPage = () => {
     const sesion = logged.access_token;
     setToken(sesion)
     const token = localStorage.setItem("token", sesion)
-    console.log(localStorage.getItem("token"))
   })
 
   if(token) {
-   sessionStorage.setItem("token", token) 
-    navigate("/home")
+   const acceso = sessionStorage.setItem("token", token)
+  navigate("/home")
   }
   
 /*

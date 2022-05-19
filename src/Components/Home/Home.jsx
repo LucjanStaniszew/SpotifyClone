@@ -4,7 +4,7 @@ import Arrow2 from '../../Media/Arrow2.png'
 import NavBar from '../NavBar/NavBar.jsx';
 import SearchBar from '../SearchBar/SearchBar.jsx';
 import { useDispatch, useSelector } from 'react-redux';
-import { accesToken, getMyAlbums, setUser } from '../../Redux/actions';
+import { accesToken, getMyAlbums, setToken, setUser } from '../../Redux/actions';
 import Paginado from '../Paginado/Paginado';
 import Albums from '../Albums/Albums';
 
@@ -14,9 +14,10 @@ const Home = () => {
   const access = sessionStorage.getItem("token")
 
   useEffect(()=> {
-      dispatch(accesToken(access))
-      dispatch(setUser());
-      dispatch(getMyAlbums(access));
+    dispatch(setToken())
+    dispatch(accesToken(access))
+    dispatch(setUser());
+    dispatch(getMyAlbums(access));
   }, [dispatch])
 
   const band = useSelector((state) => state.artist)
