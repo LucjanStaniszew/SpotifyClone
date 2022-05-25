@@ -28,8 +28,17 @@ const NavBar = () => {
       <div className='container'>
         
       <div className="left">
-        <img src={Aluxion} alt="Aluxion" className="Aluxion-image" />
-        <img src={Aluxion2} alt="Aluxion" className='Aluxion-image2' />
+        <a href="https://github.com/LucjanStaniszew" target="_blank">
+        <button className="Git" />
+        </a>
+
+        <a href="https://www.linkedin.com/in/luciano-staniszewski-784264222/" target="_blank">
+        <button className="LinkedIn" />
+        </a>
+
+        <a href="https://wa.me/5491133518159" target="_blank">
+        <button className="WhatsApp" />
+        </a>
       </div>
 
       <div className="right">
@@ -48,8 +57,18 @@ const NavBar = () => {
     return (
 
       <div className='container'>
-      <div className='left-nb'>
-      <img src={Aluxion} alt="Aluxion" className='Aluxion-image' />
+      <div className='left'>
+        <a href="https://github.com/LucjanStaniszew" target="_blank">
+        <button className="Git" />
+        </a>
+        
+        <a href="https://www.linkedin.com/in/luciano-staniszewski-784264222/" target="_blank">
+        <button className="LinkedIn" />
+        </a>
+
+        <a href="https://wa.me/5491133518159" target="_blank">
+        <button className="WhatsApp" />
+        </a>
     </div>
     <div className='right2'>
     <button className='sun-moon'><img src={Sun} alt="Sun/Moon" /></button>

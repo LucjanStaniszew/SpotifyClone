@@ -8,22 +8,43 @@
     flex: 1;
     display: flex;
     width: 50%;
+    justify-content: start;
+    align-items: center;
 }
 
-.Aluxion-image {
-    width: 133px;
-    height: 24px;
-    margin-top: 15px;
-    margin-left: 42px;
+.WhatsApp{
+    cursor: pointer;
+    margin: 25px;
+    border-radius: 50px;
+    border-color: transparent;
+    background-image: url("../../Media/icons8-whatsapp.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.Aluxion-image2 {
-    display: none;
-    /*width: 133px;
-    height: 24px;
-    margin-top: 15px;
-    margin-left: 42px;*/
+.Git{
+    margin: 25px;
+    cursor: pointer;
+    border-radius: 50px;
+    border-color: black;
+    background-image: url("../../Media/icons8-github-50.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+.LinkedIn{
+    margin: 25px;
+    cursor: pointer;
+    border-radius: 50px;
+    border-color: transparent;
+    background-image: url("../../Media/icons8-linkedin.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 
 .close{
     display: none;
@@ -93,9 +114,8 @@ button:hover{
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: end;
     width: 50%;
-    margin-left: 82vw;
 }
 
 /* TABLET */
@@ -114,14 +134,6 @@ button:hover{
     .left{
         margin-left: 5vw;
         width: 20vw;
-    }
-    .Aluxion-image{
-        display: none;
-    }
-    .Aluxion-image2{
-        display: flex;
-        width: 7vw;
-        height: 4vh;
     }
 
     .right{
