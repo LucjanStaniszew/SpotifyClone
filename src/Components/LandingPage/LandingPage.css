@@ -142,6 +142,11 @@
         align-items: center;
         width: 80vw;
     }
+    .logIn:hover{
+        transition: all 1.5s ease-in-out;
+        background-color: rgba(255, 255, 255, 0.25);
+        color: #D6F379;
+    }
     .Arrow2{
         margin: 2vw;
     }

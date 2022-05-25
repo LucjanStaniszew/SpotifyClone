@@ -42,10 +42,16 @@
     background-color: transparent;
     border-color: transparent;
 }
+.sesion:hover{
+    color: #D6F379;
+}
 
 .sun-moon{
     background-color: transparent;
     border-color: transparent;
+}
+.sun-moon:hover{
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .button-active {
