@@ -23,10 +23,13 @@ const SearchBar = () => {
   return (
     <div className='SBContainer'>
 
-      <div className="SB">
+      <form className="SB" onSubmit={(e) => {
+         e.preventDefault()
+         handleSubmit(e)
+        }}>
         <input type="text" placeholder='Buscar Artista...' className="searchInput" onChange={(e) => handleSearchBar(e)}/>
-        <button type="submit" className="artistSearch" onClick={(e) => handleSubmit(e)}>Search</button>
-      </div>
+        <input type="submit" className="artistSearch" value="Search" />
+      </form>
 
     </div>
   )

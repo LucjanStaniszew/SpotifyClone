@@ -15,7 +15,8 @@ export const finalAccessToken = () => {
 const autorizacion = "https://accounts.spotify.com/authorize";
 const clientId = "39b4aa1ee9534413a40b7fefe4dca807";
 const clientId2 = "6f40f56535ce4766bbb386dfd94864c3";
-const redirectURI = "https://spotify-clone-three-flax.vercel.app";
+const redirectURI = "https://spotify-clone-lucjanstaniszew.vercel.app/";
+//const redirectURI = "http://localhost:3000";
 
 const scopes = [
   "ugc-image-upload",
